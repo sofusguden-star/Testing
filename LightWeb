@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Portal Website</title>
+    <style>
+        /* ====== General Styles ====== */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.7);
+            padding: 10px 30px;
+            position: sticky;
+            top: 0;
+        }
+        header nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        header nav a:hover { color: #ff0044; }
+        .logo { width: 60px; }
+
+        /* ====== Hero Section ====== */
+        .hero {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .hero h1 { font-size: 3em; }
+        .hero p { font-size: 1.2em; }
+        .hero button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #ff0044;
+            color: white;
+            transition: 0.3s;
+        }
+        .hero button:hover { background-color: #ff3388; }
+
+        /* ====== Section Styles ====== */
+        section {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(0,0,0,0.7);
+            padding: 30px;
+            border-radius: 20px;
+        }
+        h2 { text-align: center; margin-bottom: 20px; }
+
+        /* ====== Gallery ====== */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .gallery img {
+            width: 250px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+        .gallery img:hover { transform: scale(1.1); }
+
+        /* ====== Contact Form ====== */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+        form button {
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #ff0044;
+            color: white;
+            cursor: pointer;
+        }
+        form button:hover { background-color: #ff3388; }
+
+        /* ====== Footer ====== */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            background: rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== Header ====== -->
+    <header>
+        <div class="logo">🌌</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ====== Home Section ====== -->
+    <section class="hero" id="home">
+        <h1>Welcome to the Dark Portal</h1>
+        <p>Step into the unknown and explore mysteries.</p>
+        <button id="enter-btn">Enter the Portal</button>
+    </section>
+
+    <!-- ====== About Section ====== -->
+    <section id="about">
+        <h2>About Dark Portal</h2>
+        <p>The Dark Portal is a mysterious place where imagination and adventure meet. Explore hidden worlds and unlock secrets. Our mission is to create a visually immersive experience for visitors seeking the unknown.</p>
+    </section>
+
+    <!-- ====== Gallery Section ====== -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1611095564986-11c54b3e868d" alt="Gallery Pic 1">
+            <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443aa3" alt="Gallery Pic 2">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Gallery Pic 3">
+        </div>
+    </section>
+
+    <!-- ====== Contact Section ====== -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="form-msg" style="text-align:center; margin-top:10px;"></p>
+    </section>
+
+    <!-- ====== Footer ====== -->
+    <footer>
+        &copy; 2025 Dark Portal. All rights reserved.
+    </footer>
+
+    <script>
+        // Hero button
+        document.getElementById("enter-btn").addEventListener("click", () => {
+            alert("You have entered the Dark Portal!");
+        });
+
+        // Contact form
+        const contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.getElementById("form-msg").innerText = "Message sent! We'll contact you soon.";
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
